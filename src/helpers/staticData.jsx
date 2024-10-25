@@ -1,8 +1,19 @@
+import MountFuji from "../assets/MountFuji.png";
+import SydneyOperaHouse from "../assets/SydneyOperaHouse.png";
+import Geirangerfjord from "../assets/Geirangerfjord.png";
+
+import MountFujiFull from "../assets/MountFuji.jpg";
+import SydneyOperaHouseFull from "../assets/SydneyOperaHouse.jpg";
+import GeirangerfjordFull from "../assets/Geirangerfjord.jpg";
+
 export default [
   {
-    title: "Mount Fuji",
+    id: 1,
+    coverImg: MountFuji,
+    fullImg: MountFujiFull,
     location: "Japan",
     googleMapsUrl: "https://goo.gl/maps/1DGM5WrWnATgkSNB8",
+    title: "Mount Fuji",
     startDate: "12 Jan, 2021",
     endDate: "24 Jan, 2021",
     description:
@@ -10,9 +21,12 @@ export default [
     imageUrl: "https://scrimba.com/links/travel-journal-japan-image-url",
   },
   {
-    title: "Sydney Opera House",
+    id: 2,
+    coverImg: SydneyOperaHouse,
+    fullImg: SydneyOperaHouseFull,
     location: "Australia",
     googleMapsUrl: "https://maps.app.goo.gl/Kx86Zxon5fRMPGUX9",
+    title: "Sydney Opera House",
     startDate: "27 May, 2023",
     endDate: "8 Jun, 2023",
     description:
@@ -20,9 +34,12 @@ export default [
     imageUrl: "https://scrimba.com/links/travel-journal-australia-image-url",
   },
   {
-    title: "Geirangerfjord",
+    id: 3,
+    coverImg: Geirangerfjord,
+    fullImg: GeirangerfjordFull,
     location: "Norway",
     googleMapsUrl: "https://maps.app.goo.gl/qUTqiqVyzfU4A28S7",
+    title: "Geirangerfjord",
     startDate: "01 Oct, 2024",
     endDate: "18 Nov, 2024",
     description:
