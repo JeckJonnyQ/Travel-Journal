@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-
 import "./Card.scss";
 import LocationMarker from "../../assets/icon/LocationIcon.png";
+import Modal from "../Modal/Modal";
 
 export default function Card(props) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -16,8 +17,11 @@ export default function Card(props) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
   const coverImage = windowWidth > 430 ? props.coverImg : props.fullImg;
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
 
   return (
     <div className="card">
@@ -26,6 +30,7 @@ export default function Card(props) {
         style={{
           backgroundImage: `url(${coverImage})`,
         }}
+        onClick={toggleModal}
       >
         {windowWidth > 430 && (
           <img
@@ -56,6 +61,12 @@ export default function Card(props) {
         <span className="card__content_date">{`${props.startDate} - ${props.endDate}`}</span>
         <p className="card__content_description">{props.description}</p>
       </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={toggleModal}
+        imageSrc={props.fullImg}
+      />
     </div>
   );
 }
